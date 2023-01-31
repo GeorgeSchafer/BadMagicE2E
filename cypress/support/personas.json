@@ -8,20 +8,19 @@
         },
         "guests": {
             "endpoint" : "/api/v1/units/:unit_id/access",
+            "credential_type": "ble",
             "permanent": {
                 "first_name": "G",
                 "last_name": "P",
                 "phone": "9282345555",
-                "email": "g@p.c",
-                "credential_type": "ble"
+                "email": "g@p.c"
             },
             "temporary": {
                 "first_name": "G",
                 "last_name": "T",
                 "phone": "9282345555",
-                "credential_type": "ble",
-                "start_at": "",
-                "end_at": ""
+                "start_at": "now()+ 9 * exp(10,7)",
+                "end_at": "now()+ 18 * exp(10,7)"
 
             }
         }
