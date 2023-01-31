@@ -1,0 +1,34 @@
+{
+    "salto": {
+        "resident": {
+            "user_id": 297594,
+            "unit_id": 297594,
+            "email": "salto@sr.com",
+            "phone:": "+19282347480"
+        },
+        "guests": {
+            "permanenet": {
+                "endpoint" : "/api/v1/units/:unit_id/access",
+                "unit_id": 297594,
+                "first_name": "G",
+                "last_name": "P",
+                "phone": "+19282345555",
+                "email": null,
+                "credential_type": "ble"
+            },
+            "temporary": {
+                "endpoint" : "/api/v1/units/:unit_id/access",
+                "unit_id": 297594,
+                "first_name": "G",
+                "last_name": "T",
+                "phone": "+19282345555",
+                "email": null,
+                "credential_type": "ble",
+                "start_at": "",
+                "end_at": ""
+
+            }
+        }
+    }
+
+}
