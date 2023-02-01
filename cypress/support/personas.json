@@ -1,27 +1,47 @@
 {
-    "salto": {
-        "resident": {
-            "user_id": 297594,
+    "residents": {
+        "lastName": "Cypress",
+        "salto": {
             "unit_id": 284303,
+            "profileName": "Salto",
             "email": "salto@sr.com",
-            "phone:": "9282347480"
+            "phone": "9282347480",
+            "guestEndpoint" : "/api/v1/units/:unit_id/access",
+            "guestCredentialType": "ble"
         },
-        "guests": {
-            "endpoint" : "/api/v1/units/:unit_id/access",
-            "credential_type": "ble",
-            "permanent": {
-                "first_name": "G",
-                "last_name": "P",
-                "phone": "9282345555",
-                "email": "g@p.c"
-            },
-            "temporary": {
-                "first_name": "G",
-                "last_name": "T",
-                "phone": "9282345555",
-                "start_offset": "8.64 * exp(10,7)",
-                "end_offset": "1.728 * exp(10,8)"
-            }
+        "phys": {
+            "unit_id": 976194,
+            "profileName": "Phys",
+            "email": "phys@sr.com",
+            "phone": "9282347480",
+            "permanentGuestEndpoint": "/api/v2/units/:unit_id/resident-guest-access-codes",
+            "temporaryGuestEndpoint": "/api/v2/units/:unit_id/resident-guest-access-codes",
+            "recurringGuestEndpoint": "/api/v2/units/:unit_id/resident-guest-access-codes",
+            "guestCredentialType": "code",
+            "activationType": ["permanent", "temporary", "recurring"]
+        }
+    },
+    "guests":{
+        "permanent": {
+            "firstName": "Cypress",
+            "lastName" : "P",
+            "phone"    : 9282345555,
+            "email"    : "p@cy.press"
+        },
+        "temporary": {
+            "firstName": "Cypress",
+            "lastName" : "T",
+            "phone"    : 9282345555,
+            "email"    : "t@cy.press",
+            "increment": "300000"
+        },
+        "recurring": {
+            "firstName": "Cypress",
+            "lastName" : "R",
+            "phone"    : 9282345555,
+            "email"    : "r@cy.press",
+            "increment": "300000",
+            "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
         }
     }
 
