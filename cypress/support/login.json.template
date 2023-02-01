@@ -1,5 +1,5 @@
 {
-    "user": "qa@smartrent.com",
+    "email": "qa@smartrent.com",
     "password": "",
     "resident_password" : "",
     "url": "https://control.smartrent-qa.com/dev/api"
