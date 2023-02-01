@@ -38,8 +38,8 @@ describe('Salto API endpoints', () => {
   }),
   it('02 Create Temporary', ()=> {
     const time = {
-      start: (Date(personas.salto.guests.temporary.start_offset) + Date.now()),
-      end: (Date(personas.salto.guests.temporary.end_offset) + Date.now())
+      start:  Date(),
+      end: Date()
     };
 
     console.log(time.start,time.end);

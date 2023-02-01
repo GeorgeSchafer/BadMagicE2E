@@ -23,6 +23,6 @@ npx cypress open
 ## Run and Upload to Cypress Cloud
 
 ```
-npx cypress run --browser chrome --record --key 013b20a8-f64b-40af-aa40-2276f4066019
+npx cypress run --browser chrome --record --key RecordKeyFromLoginJson
 ```
 
