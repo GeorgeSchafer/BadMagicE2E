@@ -1,2 +1,4 @@
 
 cypress/support/login.json
+cypress/videos
+cypress/screenshots

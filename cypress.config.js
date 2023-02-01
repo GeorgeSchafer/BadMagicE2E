@@ -7,4 +7,8 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
   },
+  env: {
+    login_url: '/login',
+    products_url: '/products',
+  }
 });
