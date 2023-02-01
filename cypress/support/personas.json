@@ -19,8 +19,8 @@
                 "first_name": "G",
                 "last_name": "T",
                 "phone": "9282345555",
-                "start_at": "now() + (9 * exp(10,7))",
-                "end_at": "now() + (18 * exp(10,7))"
+                "start_offset": "8.64 * exp(10,7)",
+                "end_offset": "1.728 * exp(10,8)"
             }
         }
     }
