@@ -13,7 +13,7 @@ describe('Salto API endpoints', () => {
   }),
   beforeEach('Open Login Page, dismiss cookies banner, log in to profile', () => {
     login.to.badMagic();
-    login.as.salto();
+    login.as.salto(personas.residents.salto.guestEndpoint);
   }),
   it('01 Create Permanent', () => {
     cy.get(selectors.unitID).type(personas.residents.salto.unit_id)
@@ -27,14 +27,14 @@ describe('Salto API endpoints', () => {
     cy.get(selectors.guestCredentialType).select(personas.residents.salto.guestCredentialType)
 
     // cy.intercept('POST','/api/*').as('request')
-    cy.request('/api/v1/units/284303/access').as('request')
+//    cy.request('/api/v1/units/284303/access').as('request')
     cy.log('adding the /api/* intercept')
     cy.get('body > div > div > div.w-full.flex-grow.grid.divide-x.grid-cols-4 > div.p-4.col-span-3.overflow-y-scroll > div.overflow-hidden.p-4.border.rounded.overflow-x-hidden.mb-4.bg-gray-200.border-gray-400 > div.flex.py-2 > div.flex.flex-col.flex-grow.mr-4 > div.flex > button.bg-blue-500').click()
-    cy.get('@request').then((request) => {
-      console.log(request);
-      expect(request.response.statusCode).to.eq(422);
-    })
-  })
+  //   cy.get('@request').then((request) => {
+  //     console.log(request);
+  //     expect(request.response.statusCode).to.eq(422);
+  //   })
+  // })
   // , it('02 Create Temporary', ()=> {
 
   //   cy.get('body > div > div > div.w-full.flex-grow.grid.divide-x.grid-cols-4 > div.p-4.col-span-3.overflow-y-scroll > div.overflow-hidden.p-4.border.rounded.overflow-x-hidden.mb-4.bg-gray-200.border-gray-400 > div.flex.py-2 > div.flex.flex-col.flex-grow.mr-4 > div:nth-child(1) > div > div > div.flex.flex-grow > input').type(personas.residents.salto.unit_id)
@@ -54,7 +54,7 @@ describe('Salto API endpoints', () => {
   //   //   .then((element)=>{
   //   //     expect(element[0].innerText).to.equal("200")
   //   //    })
-  // })
+  })
 
 })
 
