@@ -1,5 +1,5 @@
 import * as credentials from './credentials.json'
-import * as personas from './personas.json'
+import * as personas from './personas'
 
 const selectors = {
     cookieBanner: '#onetrust-reject-all-handler',
