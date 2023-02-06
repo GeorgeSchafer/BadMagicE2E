@@ -35,7 +35,7 @@ const zWaveSelectors = {
 };
 
 export {
-    loginSelectors,
+    DESIREDSELECTORS,
     zWaveSelectors,
-    DESIREDSELECTORS
-};
+    loginSelectors
+} from 'selectors.js';

@@ -3,9 +3,8 @@ import {
     residents as residents, 
     guests as guests
   } from '../support/personas.js';
-import { 
-    zWaveSelectors as selectors 
-  } from '../support/selectors.js';
+import { zWaveSelectors as selectors } from '../support/selectors.js';
+import { placeholder as p } from '../support/placeholder.js'
 
 describe('ZWave API endpoints', () => {
   // before('Before', () => {  }),
@@ -16,10 +15,9 @@ describe('ZWave API endpoints', () => {
   }),
 
   it('01 Permanent Guest', ()=> {
-    let unitString = ':unit_id';
     const request = {
       method: 'POST',
-      url: `${residents.phys.guestEndpoint.replace(unitString, residents.phys.unit_id)}`
+      url: `${residents.phys.guestEndpoint.replace(p.unit_id, residents.phys.unit_id)}`
     }
 
     cy.get(selectors.permanentGuestCode).click()
@@ -31,7 +29,6 @@ describe('ZWave API endpoints', () => {
     cy.intercept(request).as('request')
     cy.get(selectors.try).click()
     cy.get('@request').its('response').then( (response) => { 
-      console.log(response);
       expect(response.statusCode).to.eq(201);
     })
 
