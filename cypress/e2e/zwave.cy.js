@@ -27,11 +27,11 @@ describe('ZWave API endpoints', () => {
     cy.get(selectors.lastName).clear().type(guests.permanent.lastName)
     cy.get(selectors.phone).clear().type(guests.phone)
     cy.get(selectors.email).clear().type(guests.permanent.email)
-    cy.intercept(request).as('request')
+    cy.intercept(request).as('response')
     cy.get(selectors.try).click()
-    cy.get('@request').its('response').then( (response) => { 
+    cy.get('@response').its('response').then( (response) => { 
       console.log(response);
-      expect(response.status).to.eq(201);
+      expect(response.statusCode).to.eq(201);
     })
 
   })// ,it('02 DESCRIPTION', ()=> {})
