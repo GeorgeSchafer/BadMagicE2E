@@ -36,7 +36,6 @@ const as = {
         cy.get(selectors.apiURL).type(personas.residents.phys.guestEndpoint)
         cy.get(selectors.element4).click()
         cy.get(selectors.element5).click()
-
         cy.get(selectors.profileName).type(personas.residents.phys.profileName)
         cy.get(selectors.email).type(personas.residents.phys.email)
         cy.get(selectors.password).type(credentials.resident_password)
