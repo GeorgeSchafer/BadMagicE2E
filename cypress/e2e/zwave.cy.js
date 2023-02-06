@@ -19,17 +19,18 @@ describe('ZWave API endpoints', () => {
     let unitString = ':unit_id';
     const request = {
       method: 'POST',
-      url: `https://control.smartrent-qa.com${residents.phys.guestEndpoint.replace(unitString, residents.phys.unit_id)}`
+      url: `${residents.phys.guestEndpoint.replace(unitString, residents.phys.unit_id)}`
     }
+
     cy.get(selectors.permanentGuestCode).click()
     cy.get(selectors.unitID).clear().type(residents.phys.unit_id)
     cy.get(selectors.firstName).clear().type(guests.firstName)
     cy.get(selectors.lastName).clear().type(guests.permanent.lastName)
     cy.get(selectors.phone).clear().type(guests.phone)
     cy.get(selectors.email).clear().type(guests.permanent.email)
-    cy.intercept(request).as('response')
+    cy.intercept(request).as('request')
     cy.get(selectors.try).click()
-    cy.get('@response').its('response').then( (response) => { 
+    cy.get('@request').its('response').then( (response) => { 
       console.log(response);
       expect(response.statusCode).to.eq(201);
     })
