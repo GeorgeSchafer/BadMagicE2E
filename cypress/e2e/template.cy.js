@@ -7,7 +7,7 @@ import {
     DESIREDSELECTORS as selectors 
   } from '../support/selectors.js';
 
-describe('SALTO API endpoints', () => {
+describe('TESTED endpoints', () => {
   beforeEach('Description', () => {
     
   }),
